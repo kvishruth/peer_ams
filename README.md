@@ -4,4 +4,5 @@ This repository provides two methods for generating routes based on user prefere
 
 Kaggle link for data: https://www.kaggle.com/datasets/amsintelligence/network-for-persons-with-reduced-mobility
 
+Notebook with steps to process data (removing inaccessible curbs etc.): [prepare_data.ipynb](scripts/prepare_data.ipynb)
 Notebook for exploring the two methods: [example.ipynb](scripts/example.ipynb)
