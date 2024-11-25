@@ -1,6 +1,6 @@
 # peer_ams
 
-This repository provides two methods for generating routes based on user preferences (e.g., walking, biking) using a multi-constrained path problem approach and a Q-learning a* approach.
+This repository provides two methods for generating routes based on user preferences (e.g., walking, biking) using a multi-constrained path problem approach and a Q-learning A* approach.
 
 **The Q-Learning A star approach is still under development**
 
