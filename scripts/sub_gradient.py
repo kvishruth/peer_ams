@@ -61,7 +61,7 @@ def subgradient_multiple_routes(graph, source, target, constraints, weights, max
         for i in range(len(weights)):
             weights[i] += alpha * max(0, violations[i])
         
-        alpha *= 0.9  # Reduce step size for convergence
+        alpha *= 0.9
 
         # Stop if we've found enough feasible routes
         if len(feasible_routes) >= max_routes:
