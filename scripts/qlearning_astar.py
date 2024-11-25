@@ -28,7 +28,7 @@ class QLearningHeuristicAStar:
         return self.q_table.get((state, action), 0.0)
     
     def update_q_value(self, state, action, reward, next_state):
-        """Update Q-value for a state-action pair using Q-learning."""
+        """update Q-value for a state-action pair using Q-learning."""
         best_next_action = max(
             [self.get_q_value(next_state, next_action) for next_action in self.graph.successors(next_state)],
             default=0.0
@@ -67,7 +67,7 @@ class QLearningHeuristicAStar:
         return 0  
 
     def simulate_random_walks(self, start, goal, num_steps=1000):
-        """Simulate random walks to train Q-values."""
+        """simulate random walks to train Q-values."""
         for _ in range(num_steps):
             current = start
             while current != goal:
