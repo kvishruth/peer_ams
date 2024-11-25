@@ -2,7 +2,7 @@ import heapq
 
 def subgradient_multiple_routes(graph, source, target, constraints, weights, max_routes=5, max_iter=100, tol=1e-3):
     def weighted_cost(node1, node2):
-        """Compute the weighted cost between two nodes."""
+        """compute the weighted cost between two nodes."""
         edge = graph[node1][node2]
         # Objective: length = walk + bike
         length = edge[2] + edge[3]
@@ -10,7 +10,7 @@ def subgradient_multiple_routes(graph, source, target, constraints, weights, max
         return sum(w * e for w, e in zip(weights, adjusted_edge))
     
     def shortest_path():
-        """Dijkstra's algorithm for shortest path with current weights."""
+        """dijkstra's algorithm for shortest path with current weights."""
         pq = [(0, source, [])]
         visited = set()
         while pq:
@@ -28,7 +28,7 @@ def subgradient_multiple_routes(graph, source, target, constraints, weights, max
         return float('inf'), []
     
     def calculate_objectives(path):
-        """Calculate the objectives for a given path."""
+        """calculate the objectives for a given path."""
         totals = [0] * len(constraints)
         for i in range(len(path) - 1):
             edge = graph[path[i]][path[i+1]]
@@ -39,7 +39,7 @@ def subgradient_multiple_routes(graph, source, target, constraints, weights, max
         return totals
     
     def check_constraints(totals):
-        """Check if the path satisfies user-defined constraints."""
+        """check if the path satisfies user-defined constraints."""
         return [totals[i] - constraints[i] for i in range(len(constraints))]
     
     alpha = 1.0  # Initial step size
@@ -57,7 +57,7 @@ def subgradient_multiple_routes(graph, source, target, constraints, weights, max
             feasible_routes.append((cost, path, objectives))
             feasible_routes = sorted(feasible_routes, key=lambda x: x[0])[:max_routes]
         
-        # Update weights using subgradient
+        # update weights using subgradient
         for i in range(len(weights)):
             weights[i] += alpha * max(0, violations[i])
         
