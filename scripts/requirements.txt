@@ -1,0 +1,6 @@
+geopandas==0.14.4
+momepy==0.8.1
+networkx==3.3
+pandas==2.2.3
+pyproj==3.7.0
+Shapely==2.0.6
